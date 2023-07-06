@@ -93,12 +93,13 @@ public class DemoApplication {
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact> (Continuation of the `home.html` template)
+                    <a class="nav-link"> (Continuation of the corrected code)
 
 ```html
+ href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -109,12 +110,3 @@ public class DemoApplication {
     </div>
 </body>
 </html>
-<div class="container">
-    <h1 th:text="${pageTitle}"></h1>
-    <p th:text="${aboutText}"></p>
-</div>
-<div class="container">
-    <h1 th:text="${pageTitle}"></h1>
-    <p>Email: <span th:text="${email}"></span></p>
-    <p>Phone: <span th:text="${phone}"></span></p>
-</div>
