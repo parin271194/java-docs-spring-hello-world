@@ -18,7 +18,7 @@ public class DemoApplication {
         return "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<head>\n" +
-                "    <title>Basic Website</title>\n" +
+                "    <title>Advanced Website</title>\n" +
                 "    <style>\n" +
                 "        body {\n" +
                 "            font-family: Arial, sans-serif;\n" +
@@ -29,32 +29,55 @@ public class DemoApplication {
                 "        h1 {\n" +
                 "            color: #333;\n" +
                 "        }\n" +
-                "        input[type=text] {\n" +
-                "            padding: 10px;\n" +
-                "            margin-bottom: 10px;\n" +
-                "        }\n" +
-                "        button {\n" +
-                "            padding: 10px 20px;\n" +
+                "        nav {\n" +
                 "            background-color: #007bff;\n" +
+                "            padding: 10px;\n" +
+                "        }\n" +
+                "        nav a {\n" +
                 "            color: #fff;\n" +
-                "            border: none;\n" +
-                "            cursor: pointer;\n" +
+                "            text-decoration: none;\n" +
+                "            margin-right: 10px;\n" +
+                "        }\n" +
+                "        .content {\n" +
+                "            margin-top: 20px;\n" +
+                "        }\n" +
+                "        .hidden {\n" +
+                "            display: none;\n" +
                 "        }\n" +
                 "    </style>\n" +
                 "    <script>\n" +
-                "        function handleClick() {\n" +
-                "            var inputText = document.getElementById('myInput').value;\n" +
-                "            alert('You entered: ' + inputText);\n" +
+                "        function showPage(pageId) {\n" +
+                "            var pages = document.getElementsByClassName('page');\n" +
+                "            for (var i = 0; i < pages.length; i++) {\n" +
+                "                pages[i].classList.add('hidden');\n" +
+                "            }\n" +
+                "            document.getElementById(pageId).classList.remove('hidden');\n" +
                 "        }\n" +
-                "        document.getElementById('myButton').addEventListener('click', handleClick);\n" +
                 "    </script>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "    <h1>My Basic Website</h1>\n" +
-                "    <label for='myInput'>Enter some text:</label>\n" +
-                "    <input type='text' id='myInput'>\n" +
-                "    <br>\n" +
-                "    <button id='myButton'>Click Me</button>\n" +
+                "    <nav>\n" +
+                "        <a href='#' onclick=\"showPage('home');\">Home</a>\n" +
+                "        <a href='#' onclick=\"showPage('about');\">About</a>\n" +
+                "        <a href='#' onclick=\"showPage('contact');\">Contact</a>\n" +
+                "    </nav>\n" +
+                "    <div class='content'>\n" +
+                "        <div id='home' class='page'>\n" +
+                "            <h1>Welcome to the Home Page</h1>\n" +
+                "            <p>This is the home page content.</p>\n" +
+                "        </div>\n" +
+                "        <div id='about' class='page hidden'>\n" +
+                "            <h1>About Us</h1>\n" +
+                "            <p>This is the about page content.</p>\n" +
+                "        </div>\n" +
+                "        <div id='contact' class='page hidden'>\n" +
+                "            <h1>Contact Us</h1>\n" +
+                "            <p>This is the contact page content.</p>\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "    <script>\n" +
+                "        showPage('home');\n" +
+                "    </script>\n" +
                 "</body>\n" +
                 "</html>";
     }
